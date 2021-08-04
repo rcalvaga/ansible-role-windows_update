@@ -1,0 +1,14 @@
+- name: update windows systems
+  hosts: all
+  gather_facts: True
+  become: no
+  vars:
+    win_update_category_names:
+      - CriticalUpdates
+      - DefinitionUpdates
+      - SecurityUpdates
+      - UpdateRollups
+      - Updates
+        
+  roles:
+    - oatakan.windows_update
